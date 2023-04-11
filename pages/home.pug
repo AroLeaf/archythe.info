@@ -1,0 +1,21 @@
+h3.
+  Inspired by #[a(href='https://www.planetminecraft.com/project/red-tern-island/' target='_blank') Khanaris' Red Tern Island], 
+  The Archythe project aims to create the antagonists in Red Tern's universe.
+
+.cards
+  -
+    const cards = [{
+      title: 'Builds',
+      description: 'All of the builds in the project are available for download.',
+      link: '#builds',
+    }, {
+      title: 'Lore',
+      description: 'I\'m in the process of writing lore for the project, and it\'ll be available here when it\'s done.',
+      link: '#lore',
+    }];
+
+  each card in cards
+    .card
+      h3= card.title
+      p= card.description
+      a(href=card.link).button Learn More

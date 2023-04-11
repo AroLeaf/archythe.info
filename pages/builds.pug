@@ -1,0 +1,23 @@
+h2 Builds
+p.
+  All airships and other large strucures are downloadable individually.
+  #[br] There will be a main map of Archythe itself, using many of these structures, in the future.
+
+-
+  const builds = [{
+    id: 'medium-freighter',
+    name: 'Medium Freighter',
+    description: 'A medium sized freighter.',
+    pmc: 'archythian-medium-freighter',
+  }];
+
+.map-list
+  each build in builds
+    .map
+      img(src=`assets/${build.id}.png`).thumbnail
+      .info
+        h3 #{build.name}
+        p #{build.description}
+      .buttons
+        a(target='_blank' href=`https://www.planetminecraft.com/project/${build.pmc}/`).button PMC
+        a(target='_blank' href=`downloads/${build.id}.zip` download).button Download
