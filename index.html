@@ -2,22 +2,23 @@
 The Archythe project aims to create the antagonists in Red Tern's universe.
 </h3><div class="cards"><div class="card"><h3>Builds</h3><p>All of the builds in the project are available for download.</p><a class="button" href="#builds">Learn More</a></div><div class="card"><h3>Lore</h3><p>I'm in the process of writing lore for the project, and it'll be available here when it's done.</p><a class="button" href="#lore">Learn More</a></div></div></div><div class="page" id="builds"><h2>Builds</h2><p>All airships and other large strucures are downloadable individually.
 <br> There will be a main map of Archythe itself, using many of these structures, in the future.
-</p><div class="map-list"><div class="map"><img class="thumbnail" src="assets/medium-freighter.png"><div class="info"><h3>Medium Freighter</h3><p>A medium sized freighter.</p></div><div class="buttons"><a class="button" target="_blank" href="https://www.planetminecraft.com/project/archythian-medium-freighter/">PMC</a><a class="button" target="_blank" href="downloads/medium-freighter.zip" download>Download</a></div></div></div></div><div class="page" id="lore"><h2>Lore</h2><p>Coming soon.</p></div><div class="page" id="notfound"><h2>Page Not Found!</h2><a class="button" href="#home">Back to Home</a></div></main><script>window.onhashchange = () => {
-  for (const page of document.querySelectorAll('.page, nav a')) {
-    page.classList.remove('active');
-  }
+</p><div class="map-list"><div class="map"><img class="thumbnail" src="assets/medium-freighter.png"><div class="info"><h3>Medium Freighter</h3><p>A medium sized freighter.</p></div><div class="buttons"><a class="button" target="_blank" href="https://www.planetminecraft.com/project/archythian-medium-freighter/">PMC</a><a class="button" target="_blank" href="downloads/medium-freighter.zip" download>Download</a></div></div><div class="map"><img class="thumbnail" src="assets/breaker-class.png"><div class="info"><h3>Breaker Class</h3><p>A medium-sized warship built to penetrate enemy ships.</p></div><div class="buttons"><a class="button" target="_blank" href="https://www.planetminecraft.com/project/archythian-breaker-class/">PMC</a><a class="button" target="_blank" href="downloads/breaker-class.zip" download>Download</a></div></div></div></div><div class="page" id="lore"><h2>Lore</h2><p>Coming soon.</p></div><div class="page" id="notfound"><h2>Page Not Found!</h2><a class="button" href="#home">Back to Home</a></div></main><script>window.onhashchange = () => {
+  for (const page of document.querySelectorAll('.page, nav a')) page.classList.remove('active');
+  
   const hash = window.location.hash;
-  const page = document.querySelector(`.page${hash}`) 
-    || document.querySelector('.page#notfound');
+  
   const navLink = document.querySelector(`nav a[href="${hash}"]`);
-  if (page) page.classList.add('active');
+  const page = document.querySelector(`.page${hash}`)
+    || document.querySelector('.page#notfound');
+  
   if (navLink) navLink.classList.add('active');
+  if (page) page.classList.add('active');
 }
 
 window.onload = () => {
   window.location.hash ||= '#home';
   window.onhashchange();
 }
-</script><footer><p>Made by AroLeaf 
+</script><footer><p>Made by AroLeaf
 | <a target="_blank" href="https://www.planetminecraft.com/member/aroleaf/">PMC</a>
 | <a target="_blank" href="https://github.com/AroLeaf">GitHub</a></p></footer></body></html>

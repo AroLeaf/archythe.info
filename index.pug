@@ -11,27 +11,28 @@ html(lang='en')
       h1 Archythe
       .flex-grow
       nav
-        a(href='#home').nav-link Home
+        a(href='#home'  ).nav-link Home
         a(href='#builds').nav-link Builds
-        a(href='#lore').nav-link Lore
+        a(href='#lore'  ).nav-link Lore
 
     main
-      .page#home: include ./pages/home.pug
-      .page#builds: include ./pages/builds.pug
-      .page#lore: include ./pages/lore.pug
+      .page#home:     include ./pages/home.pug
+      .page#builds:   include ./pages/builds.pug
+      .page#lore:     include ./pages/lore.pug
       .page#notfound: include ./pages/404.pug
 
     script.
       window.onhashchange = () => {
-        for (const page of document.querySelectorAll('.page, nav a')) {
-          page.classList.remove('active');
-        }
+        for (const page of document.querySelectorAll('.page, nav a')) page.classList.remove('active');
+        
         const hash = window.location.hash;
-        const page = document.querySelector(`.page${hash}`) 
-          || document.querySelector('.page#notfound');
+        
         const navLink = document.querySelector(`nav a[href="${hash}"]`);
-        if (page) page.classList.add('active');
+        const page = document.querySelector(`.page${hash}`)
+          || document.querySelector('.page#notfound');
+        
         if (navLink) navLink.classList.add('active');
+        if (page) page.classList.add('active');
       }
 
       window.onload = () => {
@@ -41,6 +42,6 @@ html(lang='en')
 
     footer
       p.
-        Made by AroLeaf 
+        Made by AroLeaf
         | #[a(target='_blank' href='https://www.planetminecraft.com/member/aroleaf/') PMC]
         | #[a(target='_blank' href='https://github.com/AroLeaf') GitHub]
